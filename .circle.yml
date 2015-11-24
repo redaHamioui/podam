@@ -6,3 +6,7 @@ jdk:
 branches:
   only:
     - master
+    
+    general:
+  artifacts:
+    - "selenium/screenshots"
