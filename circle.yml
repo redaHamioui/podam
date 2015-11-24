@@ -7,6 +7,6 @@ branches:
   only:
     - master
     
-    general:
+general:
   artifacts:
     - selenium/screenshots
