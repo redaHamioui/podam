@@ -1,6 +1,9 @@
 machine:
   java:
-    version: oraclejdk6
+    version: oraclejdk7
+    hosts:
+    production-test-results-service.s3.amazonaws.com: 54.231.17.169
+    foobar: 1.2.3.4
 
 general:
   branches:
