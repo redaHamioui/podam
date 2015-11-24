@@ -1,11 +1,12 @@
 machine:
   java:
     version: oraclejdk7
-   
+  environment:
+        TERM: dumb
 
 general:
     artifacts:
-        - "target/*.jar"
+        - "$CIRCLE_ARTIFACTS/target/*.jar"
     
 test:
    post:
