@@ -11,7 +11,7 @@ dependencies:
 general:
   artifacts:
     # publish do core
-     - $CIRCLE_TEST_REPORTS
+     - $CIRCLE_TEST_REPORTS/junit
 
 test:
   override:
