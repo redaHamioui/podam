@@ -6,7 +6,7 @@ machine:
 dependencies:
   override:
     #- docker info
-    - mvn dependency:resolve -f podam/pom.xml
+    - mvn dependency:resolve -f pom.xml
 
 general:
   artifacts:
@@ -16,7 +16,7 @@ general:
 test:
   override:
     # build
-    - mvn install -f podam/pom.xml jacoco:report coveralls:report -DrepoToken=1nqr7w1iwtzAToi58EabiIhjhMgeoZoNR
+    - mvn install -f pom.xml jacoco:report coveralls:report -DrepoToken=1nqr7w1iwtzAToi58EabiIhjhMgeoZoNR
 
   post:
     # testes report
