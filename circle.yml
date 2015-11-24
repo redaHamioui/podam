@@ -1,6 +1,6 @@
 machine:
   java:
-    version: oraclejdk7
+    version: oraclejdk8
  
 
 dependencies:
@@ -11,7 +11,7 @@ dependencies:
 general:
   artifacts:
     # publish do core
-    - "server/target/modelo.jar"
+    - "target/modelo.jar"
 
 test:
   override:
