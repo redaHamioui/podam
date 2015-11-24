@@ -20,9 +20,9 @@ test:
 
   post:
     # testes report
-    - mkdir -p $CIRCLE_TEST_REPORTS
+    - mkdir -p $CIRCLE_TEST_REPORTS/junit
     
    
-    - find . -type f -regex ".*/target/failsafe-reports-reports/.*xml" -exec cp {} $CIRCLE_TEST_REPORTS \;
+    - find . -type f -regex ".*/target/failsafe-reports-reports/.*xml" -exec cp {} $CIRCLE_TEST_REPORTS/junit \;
 
   
