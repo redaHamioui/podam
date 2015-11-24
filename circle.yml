@@ -8,13 +8,16 @@ dependencies:
     #- docker info
     - mvn dependency:resolve -f pom.xml
 
-
+general:
+  artifacts:
+    # publish do core
+    - $CIRCLE_TEST_REPORTS
 
 test:
- 
+  - mvn install -f pom.xml
     
 
   post:
     # testes report
-    - mkdir -p /home/ubuntu/podam/target/junit/
-    - find . -type f -regex ".*/target/surefire-reports/.*xml" -exec cp {} /home/ubuntu/podam/target/junit/ \;
+    - mkdir -p $CIRCLE_TEST_REPORTS/junit/
+    - find . -type f -regex ".*/target/surefire-reports/.*xml" -exec cp {} $CIRCLE_TEST_REPORTS/junit/ \;
