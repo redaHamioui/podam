@@ -9,4 +9,4 @@ branches:
     
     general:
   artifacts:
-    - "selenium/screenshots"
+    - selenium/screenshots
