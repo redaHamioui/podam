@@ -1,17 +1,14 @@
 machine:
   java:
     version: oraclejdk7
-    hosts:
-    production-test-results-service.s3.amazonaws.com: 54.231.17.169
+    hosts:production-test-results-service.s3.amazonaws.com: 54.231.17.169
     foobar: 1.2.3.4
 
 general:
   branches:
     ignore:
       - gh-pages
-dependencies:
-  override: 
-    - mvn dependency:resolve -s settings.xml     
+    
 test:
    post:
     - mkdir -p $CIRCLE_TEST_REPORTS/junit/
