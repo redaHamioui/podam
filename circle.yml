@@ -16,5 +16,5 @@ test:
 
   post:
     # testes report
-    - mkdir -p junit/
-    - find . -type f -regex ".*/target/surefire-reports/.*xml" -exec cp {} junit/ \;
+    - mkdir -p /home/ubuntu/podam/target/junit/
+    - find . -type f -regex ".*/target/surefire-reports/.*xml" -exec cp {} /home/ubuntu/podam/target/junit/ \;
