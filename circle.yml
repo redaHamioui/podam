@@ -8,15 +8,13 @@ dependencies:
     #- docker info
     - mvn dependency:resolve -f pom.xml
 
-general:
-  artifacts:
-    # publish do core
-     - $CIRCLE_TEST_REPORTS/junit
+
 
 test:
   override:
     # build
     - mvn install -f pom.xml 
+    - cp -af target/site/* $CIRCLE_ARTIFACTS
     
 
   post:
