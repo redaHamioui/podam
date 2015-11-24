@@ -8,17 +8,13 @@ dependencies:
     #- docker info
     - mvn dependency:resolve -f pom.xml
 
-general:
-  artifacts:
-    # publish do core
-    - $CIRCLE_TEST_REPORTS
+
 
 test:
  override:
-  - mvn install -f pom.xml
+   override:
+    - mvn src/test
+    - cp -af target/site/* $CIRCLE_ARTIFACTS
     
 
-  post:
-    # testes report
-    - mkdir -p $CIRCLE_TEST_REPORTS/junit/
-    - find . -type f -regex ".*/target/surefire-reports/.*xml" -exec cp {} $CIRCLE_TEST_REPORTS/junit/ \;
+
