@@ -16,6 +16,7 @@ general:
 test:
   override:
     # build
+    - mvn install -f server/pom.xml 
     
 
   post:
