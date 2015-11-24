@@ -1,13 +1,11 @@
 machine:
   java:
     version: oraclejdk7
-    hosts:production-test-results-service.s3.amazonaws.com: 54.231.17.169
-    foobar: 1.2.3.4
+   
 
 general:
-  branches:
-    ignore:
-      - gh-pages
+    artifacts:
+        - "target/*.jar"
     
 test:
    post:
