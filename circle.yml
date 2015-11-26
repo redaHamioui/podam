@@ -1,0 +1,27 @@
+machine:
+  java:
+    version: oraclejdk8
+ 
+
+dependencies:
+  override:
+    #- docker info
+    - mvn dependency:resolve -f pom.xml
+
+general:
+  artifacts:
+    # publish do core
+    - $CIRCLE_ARTIFACTS
+
+test:
+  override:
+    # build
+    - mvn install -f pom.xml 
+  
+
+  post:
+    # testes report
+    - mkdir -p $CIRCLE_TEST_REPORTS
+    
+   
+    - find . -type f -regex ".*/target/failsafe-reports/.*xml" -exec cp {} $CIRCLE_TEST_REPORTS \;
